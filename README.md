@@ -4,7 +4,7 @@ This project is my personal resume built using Astro, a modern static site build
 
 ## Live Version
 
-You can access the live version of my personal resume project [here](https://www.example.com).
+You can access the live version of my personal resume project [here](https://resume-indol-delta.vercel.app/).
 
 ## Technologies Used
 
@@ -12,6 +12,9 @@ You can access the live version of my personal resume project [here](https://www
 - HTML
 - CSS
 - JavaScript
+- Vercel
+- Bootstrap Icons
+- Tailwindcss
 
 ## Features
 

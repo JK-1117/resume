@@ -1,0 +1,45 @@
+---
+import SkillBullet from "./SkillBullet.astro";
+
+export interface Props {
+    time: string;
+    title: string;
+    issuer: string;
+    link: string;
+    skills: string[];
+}
+
+const { time, title, issuer, link, skills } = Astro.props;
+---
+
+<li class="mb-10 ml-4">
+    <div
+        class="absolute w-3 h-3 bg-teal-700 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+    >
+    </div>
+    <time
+        class="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-gray-500"
+    >
+        {time}
+    </time>
+    <h3 class="text-lg font-semibold text-teal-950 dark:text-white">
+        {title}
+    </h3>
+    <h4 class="text-teal-950 mb-4">
+        by <span class="font-semibold">{issuer}</span>
+    </h4>
+    <a
+        href={link}
+        target="_blank"
+        class="rounded-full border p-2 px-4 border-teal-950 font-semibold"
+    >
+        Show Certificate <i class="bi bi-box-arrow-up-right ml-2"></i>
+    </a>
+    <ul class="flex flex-wrap gap-1 mt-4">
+        {
+            skills.map((skill) => (
+                <SkillBullet style="text-sm">{skill}</SkillBullet>
+            ))
+        }
+    </ul>
+</li>

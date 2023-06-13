@@ -1,0 +1,14 @@
+---
+export interface Props {
+    style?: string;
+}
+
+const { style = "bg-teal-950" } = Astro.props;
+---
+
+<li
+    class={style +
+        " bg-teal-950 print:bg-white print:border-teal-950 print:text-teal-950 print:border text-neutral-100 rounded-full px-2 py-1"}
+>
+    <slot />
+</li>

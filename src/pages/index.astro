@@ -1,81 +1,298 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import avatar from "../assets/avatar.jpg";
+import BaseInfo from "../components/BaseInfo.astro";
+import Education from "../components/Education.astro";
+import SkillBullet from "../components/SkillBullet.astro";
+import ExperienceItem from "../components/ExperienceItem.astro";
+import CertificationItem from "../components/CertificationItem.astro";
+
+const skills = [
+	"JavaScript",
+	"Next.js",
+	"NextAuth",
+	"React.js",
+	"MongoDB",
+	"Node.js",
+	"Express.js",
+	"REST Api",
+	"Vue.js",
+	"Vuex",
+	"TypeScript",
+	"Docker",
+	"jQuery",
+	"AJAX",
+	"Frappe",
+	"ERPNext",
+	"Python",
+	"SAP Fiori",
+	"Git",
+	"Linux",
+	"Github Actions",
+	"Cloudflare",
+	"Traefik",
+	"nginx",
+	"socket.IO",
+	"Exabytes VPS",
+	"SQL",
+	"mariaDB",
+	"Scrum",
+];
+const languages = ["English", "Mandarin", "Cantonese", "Hakka"];
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="Chin Jun Kang | Fullstack Web Developer">
+	<div
+		class="bg-teal-950 py-12 text-neutral-100 print:bg-white print:text-black"
+	>
+		<div class="container mx-auto">
+			<div class="lg:flex gap-4 px-4">
+				<div class="flex">
+					<div
+						class="rounded-full overflow-hidden w-32 h-32 lg:w-40 lg:h-40"
+					>
+						<Image
+							class="w-32 lg:w-40"
+							src={avatar}
+							width={160}
+							quality="high"
+							alt="A formal portrait of Chin Jun Kang"
+						/>
+					</div>
+					<div class="p-4">
+						<div>
+							<h1 class="text-4xl xl:text-5xl mb-2">
+								Chin Jun Kang
+							</h1>
+							<p class="text-xl xl:text-2xl pl-1">
+								Fullstack Web Developer
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="p-4">
+					<BaseInfo />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="w-full">
+		<div class="container mx-auto px-4">
+			<div class="px-2 py-4">
+				<h2 class="text-2xl text-teal-950 border-b-4 border-teal-950">
+					SHORT DESCRIPTION
+				</h2>
+				<p class="py-2">
+					As an experienced Associate Developer, I bring a proven
+					track record of success in the information technology and
+					services industry. I mainly focus on Web technologies and
+					JavaScript frameworks for both front-end and back-end to
+					create a responsive web application that improve business
+					process. With a strong background in Front-end Development,
+					Problem Solving, JavaScript, and Git.
+				</p>
+				<p class="py-2">
+					Throughout my career, I have demonstrated a passion for
+					tackling complex challenges and a dedication to continuous
+					learning and improvement. With my extensive experience in
+					building Enterprise Resource Planning (ERP) systems for
+					companies across various domains, I have developed a deep
+					understanding of diverse business requirements and intricate
+					business flows.
+				</p>
+				<p class="pt-2">
+					As I continue to grow and develop as a professional, I am
+					committed to expanding my skill set and taking on new
+					challenges. Whether collaborating with a team or working
+					independently, I am always striving to deliver exceptional
+					results and exceed expectations.
+				</p>
+			</div>
+			<Education />
+			<div class="px-2 py-4">
+				<h2 class="text-2xl text-teal-950 border-b-4 border-teal-950">
+					SKILLS
+				</h2>
+				<ul class="flex flex-wrap gap-4 pt-4">
+					{skills.map((skill) => <SkillBullet>{skill}</SkillBullet>)}
+				</ul>
+			</div>
+			<div class="px-2 py-4">
+				<h2 class="text-2xl text-teal-950 border-b-4 border-teal-950">
+					LANGUAGES
+				</h2>
+				<ul class="flex flex-wrap gap-4 pt-4">
+					{languages.map((lang) => <SkillBullet>{lang}</SkillBullet>)}
+				</ul>
+			</div>
+			<div class="px-2 py-4">
+				<h2
+					class="text-2xl text-teal-950 border-b-4 border-teal-950 mb-4"
+				>
+					EXPERIENCES
+				</h2>
+				<ol
+					class="relative border-l border-teal-700 dark:border-gray-700"
+				>
+					<ExperienceItem
+						time="Oct 2022 - Present"
+						title="Senior Software Developer"
+						company="Byondwave Consulting"
+						location="Kuala Lumpur, Malaysia"
+						activities={[
+							"Participated in full-stack ERPNext development for custom business applications using Frappe and ERPNext.",
+							"Analyzing the business flow of organizations and providing effective solutions to address their specific requirements and optimize their processes.",
+							"Involved in UIUX designing for ERP systems.",
+							"Integrating diverse third-party applications with ERP systems, seamlessly connecting and synchronizing data, processes, and functionalities for enhanced operational efficiency and streamlined workflows.",
+							"Managed the end-to-end deployment and integration process of ERP systems onto Linux VPS environments using technologies such as Docker, Cloudflare, Git Actions, and more",
+							"Handle various Git operations, including branch management, merging, pull requests, conflict resolution, and Github Actions.",
+						]}
+						skills={[
+							"Frappe",
+							"ERPNext",
+							"JavaScript",
+							"jQuery",
+							"Vue.js",
+							"Node.js",
+							"Python",
+							"REST Api",
+							"Stripe",
+							"Docker",
+							"Linux",
+							"Github Actions",
+							"Cloudflare",
+							"Traefik",
+							"nginx",
+							"socket.IO",
+							"Exabytes VPS",
+							"SQL",
+							"mariaDB",
+							"Scrum",
+						]}
+					/>
+					<ExperienceItem
+						time="Jun 2020 - Oct 2022"
+						title="Accociate Developer"
+						company="Byondwave Consulting"
+						location="Kuala Lumpur, Malaysia"
+						activities={[
+							"Participated in Fiori front-end development of various SAP Marketing Cloud projects and custom business applications using UI5.",
+							"Provide Fiori solutions and suggestion to solve business requirements and improve business processes.",
+							"Involved in deployment management in SAP Cloud Platform and Node.js server.",
+							"Involved in development of Sales Funnels, web pages and email campaigns.",
+						]}
+						skills={[
+							"SAP Fiori",
+							"SAPUI5",
+							"JavaScript",
+							"jQuery",
+							"SAP Cloud Platform",
+							"Node.js",
+							"REST Api",
+							"ClickFunnels",
+							"Stripe",
+							"Git",
+							"Scrum",
+						]}
+					/>
+					<ExperienceItem
+						time="Oct 2018 - Dec 2018"
+						title="Full Stack Web Developer"
+						company="Infocomm Solution System"
+						location="Ipoh, Perak, Malaysia"
+						activities={[
+							"Involved in front-end and back-end development of various types of systems including ERP and Event Management System using Java Server Side technologies.",
+							"Carry out Research & Development on new tools, knowledge and technologies on enhancement for system performance and User Experience as well as server system configuration.",
+							"Support customers in system setup and maintenance, server maintenance and troubleshooting common networking issues.",
+						]}
+						skills={[
+							"Linux",
+							"Java",
+							"JSP",
+							"JavaScript",
+							"jQuery",
+							"AJAX",
+							"SQL",
+							"REST Api",
+						]}
+					/>
+				</ol>
+			</div>
+			<div class="px-2 py-4">
+				<h2
+					class="text-2xl text-teal-950 border-b-4 border-teal-950 mb-4"
+				>
+					LICENSES & CERTIFICATIONS
+				</h2>
+				<ol
+					class="relative border-l border-teal-700 dark:border-gray-700"
+				>
+					<CertificationItem
+						title="Next.js & React - The Complete Guide (incl. Two Paths!)"
+						issuer="Udemy"
+						time="Apr 2023"
+						link="https://www.udemy.com/certificate/UC-fc119e53-98ff-441c-a04a-1d390516dec0"
+						skills={["Next.js", "NextAuth"]}
+					/>
+					<CertificationItem
+						title="React - The Complete Guide (incl Hooks, React Router, Redux)"
+						issuer="Udemy"
+						time="Apr 2023"
+						link="https://www.udemy.com/certificate/UC-23d676c1-a1dd-46de-96ac-dd2bed144daf/"
+						skills={["React.js"]}
+					/>
+					<CertificationItem
+						title="Understanding TypeScript"
+						issuer="Udemy"
+						time="Apr 2023"
+						link="https://ude.my/UC-6d1b76fd-685f-42bf-a10f-1ebb746384b5"
+						skills={["TypeScript"]}
+					/>
+					<CertificationItem
+						title="Vue - The Complete Guide (incl. Router & Composition API)"
+						issuer="Udemy"
+						time="November 2022"
+						link="https://ude.my/UC-8880c449-0993-49ce-9a1a-04058e85ffb4"
+						skills={["Vue.js", "Vuex"]}
+					/>
+					<CertificationItem
+						title="ERPNext Certified Frappe Partner"
+						issuer="Frappe"
+						time="March 2022"
+						link="https://frappe.io/partner-certification/PARTCRTF00003"
+						skills={["Frappe", "ERPNext"]}
+					/>
+					<CertificationItem
+						title="Angular - The Complete Guide (2021 Edition)"
+						issuer="Udemy"
+						time="August 2021"
+						link="https://ude.my/UC-5a0ec579-f42c-459d-846a-4dd9eb8a78ec"
+						skills={["Angular"]}
+					/>
+					<CertificationItem
+						title="MERN eCommerce From Scratch"
+						issuer="Udemy"
+						time="August 2021"
+						link="https://ude.my/UC-5a0ec579-f42c-459d-846a-4dd9eb8a78ec"
+						skills={[
+							"MongoDB",
+							"React.js",
+							"Mongoose ODM",
+							"Node.js",
+							"Express.js",
+						]}
+					/>
+					<CertificationItem
+						title="SAP Certified Development Associate - SAP Fiori Application Developer"
+						issuer="SAP"
+						time="March 2021"
+						link="https://www.youracclaim.com/badges/21def09e-0f38-4a9f-aa55-02468b86442c?source=linked_in_profile"
+						skills={["SAP Fiori", "SAPUI5"]}
+					/>
+				</ol>
+			</div>
+		</div>
+	</div>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>

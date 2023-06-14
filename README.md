@@ -1,6 +1,6 @@
 # Personal Resume
 
-This project is my personal resume built using Astro, a modern static site builder. It showcases my skills, experience, and qualifications in a concise and visually appealing manner.
+This project is my personal resume built using <a href="https://astro.build/"><img src="./public/astro.svg" height="24" alt="Astro" /></a>, a modern static site builder. It showcases my skills, experience, and qualifications in a concise and visually appealing manner.
 
 ## Live Version
 

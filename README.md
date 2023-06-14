@@ -38,7 +38,7 @@ Contributions and feedback are welcome! If you notice any issues or have suggest
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use the code as a reference or customize it for your own personal resume.
+This project is licensed under the [MIT License](./LICENSE.txt). Feel free to use the code as a reference or customize it for your own personal resume.
 
 ## Contact
 
